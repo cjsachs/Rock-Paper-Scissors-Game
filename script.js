@@ -19,14 +19,11 @@ function playGame(playerSelection, computerSelection) {
     // Code IF player chooses ROCK as their choice
     if (playerSelection == 'rock' && computerSelection == 'Rock') {
         message = 'Tie Game!';
-        console.log(`You chose ${playerSelection.replace('r', 'R')} And the CPU chose ${computerSelection}!`)
         return message;
     } else if (playerSelection == 'rock' && computerSelection =='Paper') {
-        console.log(`You chose ${playerSelection.replace('r', 'R')} And the CPU chose ${computerSelection}!`)
         message = 'You Lose!';
         return message;
     } else if (playerSelection == 'rock' && computerSelection =='Scissors') {
-        console.log(`You chose ${playerSelection.replace('r', 'R')} And the CPU chose ${computerSelection}!`)
         message = 'You Win!';
         return message;
     }
@@ -69,19 +66,22 @@ function playGame(playerSelection, computerSelection) {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    if (playGame(playerSelection, computerSelection) == 'You Lose!') {
-     computerScore += 1;
-     console.log(`Your score: ${playerScore} | CPU score: ${computerScore}`);
-    } else if (playGame(playerSelection, computerSelection) == 'You Win!') {
-     playerScore += 1;
-     console.log(`Your score: ${playerScore} | CPU score: ${computerScore}`);
-    } else {
-       console.log(`The score remains ${playerScore} | ${computerScore}`); 
+    while (playerScore < 5 || computerScore < 5) {
+        playGame(playerSelection, computerSelection);
+        if (playGame(playerSelection, computerSelection) == 'You Lose!') {
+            ++computerScore;
+            return `Your Score: ${playerScore} | CPU Score: ${computerScore}`;
+        } else if (playGame(playerSelection, computerSelection) == 'You Win!') {
+            ++playerScore;
+            return `Your Score: ${playerScore} | CPU Score: ${computerScore}`;
+        } else if (playGame(playerSelection, computerSelection) == 'Tie Game!') {
+            let message = 'Its a tie! Try again!';
+            return `${message} The Score remains ${playerScore} | ${computerScore}`;
+        }
     }
 };
-
-const playerSelection = 'rock'; //prompt('Choose wisely... Rock, Paper, or Scissors?');
+const playerSelection = prompt('Choose wisely... Rock, Paper, or Scissors?');
 const computerSelection = computerPlay();
 
-// console.log(playGame(playerSelection, computerSelection));
-game();
+console.log(playGame(playerSelection, computerSelection));
+console.log(game());
