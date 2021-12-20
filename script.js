@@ -14,47 +14,43 @@ function computerPlay() {
 };
 
 // function playGame() will compare the players choice with the CPU's choice to decide who is the winner and loser!
-function playGame(playerSelection, computerSelection) {
+function playGame() {
+    let playerSelection = prompt('Choose wisely... Rock, Paper, or Scissors?');
+    const computerSelection = computerPlay();
     playerSelection = playerSelection.toLowerCase();
     // Code IF player chooses ROCK as their choice
     if (playerSelection == 'rock' && computerSelection == 'Rock') {
-        message = 'Tie Game!';
+        message = `Tie Game! You chose ${playerSelection.replace('r', 'R')} And the CPU chose ${computerSelection}!`
         return message;
     } else if (playerSelection == 'rock' && computerSelection =='Paper') {
-        message = 'You Lose!';
+        message = `You Lose! You chose ${playerSelection.replace('r', 'R')} And the CPU chose ${computerSelection}!`
         return message;
     } else if (playerSelection == 'rock' && computerSelection =='Scissors') {
-        message = 'You Win!';
+        message = `You Win! You chose ${playerSelection.replace('r', 'R')} And the CPU chose ${computerSelection}!`
         return message;
     }
 
     // Code IF player choose PAPER as their choice
     if (playerSelection == 'paper' && computerSelection == 'Paper') {
-        message = 'Tie Game!';
-        console.log(`You chose ${playerSelection.replace('p', 'P')} And the CPU chose ${computerSelection}!`)
+        message = `Tie Game! You chose ${playerSelection.replace('p', 'P')} And the CPU chose ${computerSelection}!`
         return message;
     } else if (playerSelection == 'paper' && computerSelection =='Scissors') {
-        console.log(`You chose ${playerSelection.replace('p', 'P')} And the CPU chose ${computerSelection}!`)
-        message = 'You Lose!';
+        message = `You Lose! You chose ${playerSelection.replace('p', 'P')} And the CPU chose ${computerSelection}!`
         return message;
     } else if (playerSelection == 'paper' && computerSelection =='Rock') {
-        console.log(`You chose ${playerSelection.replace('p', 'P')} And the CPU chose ${computerSelection}!`)
-        message = 'You Win!';
+        message = `You Win! You chose ${playerSelection.replace('p', 'P')} And the CPU chose ${computerSelection}!`
         return message;
     }
 
     // Code IF player choose SCISSORS as their choice
     if (playerSelection == 'scissors' && computerSelection == 'Scissors') {
-        message = 'Tie Game!';
-        console.log(`You chose ${playerSelection.replace('s', 'S')} And the CPU chose ${computerSelection}!`)
+        message = `Tie Game! You chose ${playerSelection.replace('s', 'S')} And the CPU chose ${computerSelection}!`
         return message;
     } else if (playerSelection == 'scissors' && computerSelection =='Rock') {
-        console.log(`You chose ${playerSelection.replace('s', 'S')} And the CPU chose ${computerSelection}!`)
-        message = 'You Lose!';
+        message = `You Lose! You chose ${playerSelection.replace('s', 'S')} And the CPU chose ${computerSelection}!`
         return message;
     } else if (playerSelection == 'scissors' && computerSelection =='Paper') {
-        console.log(`You chose ${playerSelection.replace('s', 'S')} And the CPU chose ${computerSelection}!`)
-        message = 'You Win!';
+        message = `You Win! You chose ${playerSelection.replace('s', 'S')} And the CPU chose ${computerSelection}!`
         return message;
     } else {
         message = 'Oops something went wrong with our program! Try Again!'
@@ -64,24 +60,11 @@ function playGame(playerSelection, computerSelection) {
 
 // function game() creates a 5 round game and keeps score
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    while (playerScore < 5 || computerScore < 5) {
-        playGame(playerSelection, computerSelection);
-        if (playGame(playerSelection, computerSelection) == 'You Lose!') {
-            ++computerScore;
-            return `Your Score: ${playerScore} | CPU Score: ${computerScore}`;
-        } else if (playGame(playerSelection, computerSelection) == 'You Win!') {
-            ++playerScore;
-            return `Your Score: ${playerScore} | CPU Score: ${computerScore}`;
-        } else if (playGame(playerSelection, computerSelection) == 'Tie Game!') {
-            let message = 'Its a tie! Try again!';
-            return `${message} The Score remains ${playerScore} | ${computerScore}`;
-        }
-    }
+    console.log(playGame());
+    console.log(playGame());
+    console.log(playGame());
+    console.log(playGame());
+    console.log(playGame());
 };
-const playerSelection = prompt('Choose wisely... Rock, Paper, or Scissors?');
-const computerSelection = computerPlay();
 
-console.log(playGame(playerSelection, computerSelection));
 console.log(game());
