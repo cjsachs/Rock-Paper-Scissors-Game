@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors Game</title>
-</head>
-<body>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <div class="score-board">
+      <div id="user-label" class="badge">User</div>
+      <div id="cpu-label" class="badge">CPU</div>
+      <span id="user-score">0</span>:<span id="cpu-score">0</span>
+    </div>
+
+    <div class="result">
+      <p></p>
+    </div>
+
+    <div class="choices">
+      <div class="choice" id="Rock">
+        <img src="images/rock.png" alt="" />
+      </div>
+      <div class="choice" id="Paper">
+        <img src="images/paper.png" alt="" />
+      </div>
+      <div class="choice" id="Scissors">
+        <img src="images/scissors.png" alt="" />
+      </div>
+    </div>
+
+    <p id="message">Choose Wisely...</p>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

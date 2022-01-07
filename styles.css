@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #86626a;
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    background: #ffcdb2;
+    padding: 20px;
+}
+
+header h1 {
+    color: #aa816b;
+    text-align: center;
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid #ffcdb2;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
+    color: #e4d9da;
+    font-size: 40px;
+    padding: 20px;
+    position: relative;
+}
+
+.badge {
+    background: #e5989b;
+    border: 3px solid #e66267;
+    color: #e4d9da;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+#cpu-label {
+    position: absolute;
+    top: 30px;
+    right: -25px;
+}
+
+.result {
+    font-size: 32px;
+    color: #e4d9da;
+}
+
+.result p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.choices {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.choice {
+    display: inline-block;
+    border: 3px solid #e4d9da;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: #61484d;
+}
+
+#message {
+    text-align: center;
+    color: #e4d9da;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* JS classes */
+.green-glow {
+    border: 3px solid rgb(129, 255, 129);
+    box-shadow: 0 0 10px green;
+}
+
+.red-glow {
+    border: 3px solid rgb(255, 112, 112);
+    box-shadow: 0 0 10px red;
+}
+
+.gray-glow {
+    border: 3px solid gray;
+    box-shadow: 0 0 10px rgb(80, 80, 80);
+}
+/* end of JS classes */
